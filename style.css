@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=DM+Sans:wght@400;500;600;700&display=swap');
+:root {
+  color-scheme: light;
+  --oceano-profundo: #063b4c;
+  --azul-marinho: #075b72;
+  --azul-onda: #0a9396;
+  --espuma: #e8f7f5;
+  --agua-clara: #caf0f3;
+  --areia: #fff3d6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px 0;
+  place-items: center;
+  background:
+    radial-gradient(ellipse at 10% 15%, rgba(255, 255, 255, 0.48), transparent 35%),
+    linear-gradient(145deg, #90e0ef, #48bfe3 52%, #168aad);
+  color: var(--oceano-profundo);
+  font-family: "DM Sans", sans-serif;
+}
+
+.caixa-principal {
+  width: min(760px, 92vw);
+  padding: 30px 28px 26px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.72);
+  border-radius: 24px;
+  background: linear-gradient(155deg, var(--azul-marinho), var(--azul-onda));
+  box-shadow: 0 20px 50px rgba(3, 54, 68, 0.3);
+}
+
+h1,
+h2,
+.caixa-perguntas {
+  font-family: "Bree Serif", serif;
+}
+
+h1 {
+  margin: 0 0 20px;
+  color: var(--areia);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.tela-inicial {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  padding: 10px 6px 0;
+}
+
+.tela-inicial p {
+  margin: 0;
+  color: var(--espuma);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.iniciar-btn,
+.novamente-btn,
+.creditos-btn,
+.voltar-inicio-btn {
+  padding: 12px 18px;
+  border: 1px solid var(--oceano-profundo);
+  border-radius: 12px;
+  background: var(--areia);
+  box-shadow: 0 6px 16px rgba(3, 54, 68, 0.18);
+  color: var(--oceano-profundo);
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+.iniciar-btn:hover,
+.novamente-btn:hover,
+.creditos-btn:hover,
+.voltar-inicio-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+}
+
+.iniciar-btn:focus-visible,
+.novamente-btn:focus-visible,
+.creditos-btn:focus-visible,
+.voltar-inicio-btn:focus-visible,
+.caixa-alternativas button:focus-visible,
+.tela-creditos a:focus-visible {
+  outline: 3px solid #ffd166;
+  outline-offset: 3px;
+}
+
+.caixa-perguntas {
+  display: none;
+  margin-bottom: 14px;
+  padding: 18px;
+  border: 1px solid rgba(6, 59, 76, 0.2);
+  border-radius: 14px;
+  background: var(--espuma);
+  color: var(--oceano-profundo);
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.caixa-alternativas {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.caixa-alternativas button {
+  padding: 13px 16px;
+  border: 1px solid rgba(6, 59, 76, 0.32);
+  border-radius: 14px;
+  background: var(--agua-clara);
+  color: var(--oceano-profundo);
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: left;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.caixa-alternativas button:hover {
+  transform: translateX(3px);
+  background: var(--areia);
+}
+
+.caixa-alternativas button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.caixa-resultado,
+.tela-creditos {
+  display: none;
+  margin-top: 16px;
+  padding: 20px;
+  border: 1px solid rgba(6, 59, 76, 0.16);
+  border-radius: 18px;
+  background: var(--espuma);
+  color: var(--oceano-profundo);
+}
+
+.titulo-resultado,
+.tela-creditos h2 {
+  margin: 0 0 12px;
+  color: var(--azul-marinho);
+  font-size: clamp(1.8rem, 4vw, 2.3rem);
+  text-align: center;
+}
+
+.texto-resultado {
+  margin: 0 0 18px;
+  font-weight: 600;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+.tela-creditos {
+  line-height: 1.7;
+  text-align: center;
+}
+
+.tela-creditos p {
+  margin: 10px 0;
+}
+
+.tela-creditos a {
+  color: #075b72;
+}
+
+.creditos-btn {
+  display: none;
+}
+
+@media (max-width: 520px) {
+  .caixa-principal {
+    padding: 24px 18px 20px;
+  }
+
+  .tela-inicial p {
+    text-align: left;
+  }
+}
